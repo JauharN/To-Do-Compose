@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.0.21"
 }
 
 android {
@@ -70,5 +71,11 @@ dependencies {
     // Dagger Hilt
     implementation(libs.hilt.android) // API Hilt runtime
     ksp(libs.hilt.compiler) // Code generator Hilt
+
+    // Compose Navigation
+    implementation(libs.androidx.navigation.compose)
+
+    // KotlinX Serialization
+    implementation(libs.kotlinx.serialization.json)
 }
 
